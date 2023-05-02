@@ -57,3 +57,20 @@ interface IRollNumbers {
     [index: number]: number
 }
 const rollNumbers3: IRollNumbers = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+
+
+// generic types
+
+type genericArray<T> = Array<T>
+
+const numbers: genericArray<number> = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+const numbers2: genericArray<string> = ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
+type numberWithValue = { name: string, value: number }
+const numbers3: genericArray<numberWithValue> = [{ name: 'one', value: 1 }, { name: 'two', value: 2 }]
+
+type genericTuple<X, Y> = [X, Y]
+
+const nums: genericTuple<string, number> = ['one', 1]
+const numObj: genericTuple<object, string> = [{ name: 'one', value: 1 }, 'one']
+const numsObj: genericTuple<{ name: string, value: number }, string> = [{ name: 'one', value: 1 }, 'one']
