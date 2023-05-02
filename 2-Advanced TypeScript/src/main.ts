@@ -30,20 +30,30 @@ interface IUser {
 }
 
 interface INewUser extends IUser {
-    section:string
+    section: string
 }
 
 const newUser: IUser = {
     name: 'habib',
     class: 9,
-    roll: 10, 
+    roll: 10,
 }
 
 
-const newUser2 : INewUser ={
-    name:'rakib',
-    class:8,
-    roll:3,
-    section:'B'
+const newUser2: INewUser = {
+    name: 'rakib',
+    class: 8,
+    roll: 3,
+    section: 'B'
 }
- 
+
+
+// type alias vs interface
+// different syntax
+const rollNumbers1: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+type rollNumberType = number[];
+const rollNumbers2: rollNumberType = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+interface IRollNumbers {
+    [index: number]: number
+}
+const rollNumbers3: IRollNumbers = [1, 2, 3, 4, 5, 6, 7, 8, 9];
