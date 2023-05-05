@@ -131,4 +131,31 @@ const addNewBallondor = <T>(param: T) => {
 }
 
 const result4 = addNewBallondor<object>({ lastBallonDor: 2021 })
-console.log(result4);
+// console.log(result4);
+
+
+// Generic Constraints
+type player2 = {
+    name: string,
+    age: number,
+    club: string,
+    ballondor: number
+}
+
+const cristianoRonaldo: player2 = {
+    name: "cristiano ronaldo",
+    age: 37,
+    club: 'al nasser',
+    ballondor: 5
+}
+
+type mandatoryInput = {name:string, age:number, club:string}
+interface mandatoryInput2  {name:string, age:number, club:string}
+
+const addOneMoreProp = <T extends mandatoryInput>(param:T) => {
+    const add = {...param, insta:"555M"}
+    return add;
+}
+
+const result5 = addOneMoreProp(cristianoRonaldo)
+// console.log(result5);
