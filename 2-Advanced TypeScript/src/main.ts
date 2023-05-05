@@ -149,13 +149,33 @@ const cristianoRonaldo: player2 = {
     ballondor: 5
 }
 
-type mandatoryInput = {name:string, age:number, club:string}
-interface mandatoryInput2  {name:string, age:number, club:string}
+type mandatoryInput = { name: string, age: number, club: string }
+interface mandatoryInput2 { name: string, age: number, club: string }
 
-const addOneMoreProp = <T extends mandatoryInput>(param:T) => {
-    const add = {...param, insta:"555M"}
+const addOneMoreProp = <T extends mandatoryInput>(param: T) => {
+    const add = { ...param, insta: "555M" }
     return add;
 }
 
 const result5 = addOneMoreProp(cristianoRonaldo)
 // console.log(result5);
+
+
+// make promise
+const makePromise = (): Promise<string> => {
+    return new Promise<string>((resolve, reject) => {
+        const data = 'data is fetched'
+        if (data) {
+            resolve('successful')
+        } else {
+            reject('failed')
+        }
+    })
+}
+
+const getPromiseData = async():Promise<void> => {
+    const data = await makePromise();
+    console.log(data);
+}
+
+getPromiseData()
