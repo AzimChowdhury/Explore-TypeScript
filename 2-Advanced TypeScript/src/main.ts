@@ -74,3 +74,14 @@ type genericTuple<X, Y> = [X, Y]
 const nums: genericTuple<string, number> = ['one', 1]
 const numObj: genericTuple<object, string> = [{ name: 'one', value: 1 }, 'one']
 const numsObj: genericTuple<{ name: string, value: number }, string> = [{ name: 'one', value: 1 }, 'one']
+
+// generic interface
+interface PlayerInterface<P> {
+    name: string,
+    position: P
+}
+
+const messi: PlayerInterface<string> = {
+    name: 'lionel Messi',
+    position: 'forward / attacking midfielder'
+}
