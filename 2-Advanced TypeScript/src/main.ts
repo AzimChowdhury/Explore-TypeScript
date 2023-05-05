@@ -104,3 +104,31 @@ const messi2: PlayerInterface2<object, number[]> = {
     },
     BallonDor: [2008, 2009, 2010, 2012, 2014, 2016, 2019]
 }
+
+
+
+// generic function
+
+const convertToArray = <T>(param: T): T[] => {
+    return [param]
+}
+
+const result = convertToArray<boolean>(false)
+const result2 = convertToArray<string>('bangladesh')
+const result3 = convertToArray<object>({ name: 'azim', age: 21 })
+// console.log(result, result2, result3);
+
+
+
+const addNewBallondor = <T>(param: T) => {
+    const player: object = {
+        name: 'messi',
+        age: 34,
+        club: 'psg'
+    }
+    const newPlayer = { ...player, ...param }
+    return newPlayer
+}
+
+const result4 = addNewBallondor<object>({ lastBallonDor: 2021 })
+console.log(result4);
