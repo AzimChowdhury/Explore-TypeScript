@@ -85,3 +85,22 @@ const messi: PlayerInterface<string> = {
     name: 'lionel Messi',
     position: 'forward / attacking midfielder'
 }
+const ronaldo: PlayerInterface<boolean> = {
+    name: 'Cristiano Ronaldo',
+    position: true
+}
+
+interface PlayerInterface2<X, Y> {
+    name: string,
+    club: X,
+    BallonDor: Y
+}
+
+const messi2: PlayerInterface2<object, number[]> = {
+    name: 'lionel messi',
+    club: {
+        name: 'PSG',
+        championsTrophy: false
+    },
+    BallonDor: [2008, 2009, 2010, 2012, 2014, 2016, 2019]
+}
