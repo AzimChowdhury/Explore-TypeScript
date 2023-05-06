@@ -25,6 +25,10 @@ result2.championsCelebration()
 
 
 
+
+
+
+
 // inheritance
 class ParentClass {
     constructor(public name: string, public age: number, public hour: number) { }
@@ -61,6 +65,77 @@ class Teacher extends ParentClass {
 
 
 const student1 = new Student('rakib', 15, 7)
-console.log(student1.gotClass());
-const teacher1 = new Teacher('MR. Nasir', 48, 6,23)
-console.log(teacher1.takeClass())
+// console.log(student1.gotClass());
+const teacher1 = new Teacher('MR. Nasir', 48, 6, 23)
+// console.log(teacher1.takeClass())
+
+
+
+
+
+
+// type guard 
+
+type normalUser = {
+    name: string
+}
+
+type adminUser = {
+    name: string,
+    role: 'admin'
+}
+
+
+const checker = (param: normalUser | adminUser): string => {
+    if ('role' in param) {
+        return 'I am an admin'
+    } else {
+        return 'I am a user'
+    }
+}
+
+const user1: normalUser = { name: 'sakib' };
+const user2: adminUser = { name: 'Mabud', role: 'admin' }
+
+// console.log(checker(user2));
+
+
+class Animal {
+    name: string;
+
+    constructor(name: string) {
+        this.name = name;
+    }
+}
+
+class Dog extends Animal {
+    constructor(name: string) {
+        super(name)
+    }
+    makeBark() {
+        console.log(`ghew ghew`);
+    }
+}
+
+class Cat extends Animal {
+    constructor(name: string) {
+        super(name)
+    }
+    makeMeaw() {
+        console.log(`meaw meaw`); 
+    }
+}
+
+const animalChecker = (animal: Animal) => {
+    if(animal instanceof Dog){
+        animal.makeBark()
+    }else if(animal instanceof Cat){
+        animal.makeMeaw()
+    }
+}
+
+const animal1 = new Dog('jhon') 
+const animal2 = new Cat('pet')
+
+// console.log(animalChecker(animal2))
+
