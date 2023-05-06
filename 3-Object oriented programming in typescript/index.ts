@@ -144,7 +144,8 @@ const animal2 = new Cat('pet')
 
 //Access Modifiers: Public, Private, Protected
 
-// private property only accessible with class.  protected properties also accessible with class. but the difference is protected property is accessible with inheritance but private property not
+// private property only accessible with class.  protected properties also accessible with class.
+// but the difference is protected property is accessible with inheritance but private property not
 
 class BankAccount {
     constructor(public readonly id:number, public name:string, private _balance: number){
@@ -177,3 +178,24 @@ myAcc.deposit = 214
 const result3 = myAcc.balance
 const result4 = myAcc.getBalance()
 // console.log(result3, result4);
+
+
+
+// static
+class Counter {
+    static number:number = 0;
+
+    static increment():number{
+       return Counter.number = Counter.number +1
+    }
+
+    static decrement():number{
+        return Counter.number = Counter.number -1 
+    }
+
+}
+ 
+// console.log(Counter.increment(), Counter.increment()); 
+
+
+
