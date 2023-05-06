@@ -150,7 +150,30 @@ class BankAccount {
     constructor(public readonly id:number, public name:string, private _balance: number){
 
     }
+
+    // method
+    getBalance():number{
+        return this._balance
+    }
+    addBalance(amount:number){
+        this._balance = this._balance +amount
+    }
+
+
+    // getter
+    get balance():number{
+        return this._balance
+    }
+    
+    // setter
+    set deposit(amount:number){
+        this._balance = this._balance + amount
+    }
 }
 
 const myAcc = new BankAccount(151054, 'azim', 217)
-console.log(myAcc);
+myAcc.addBalance(69)
+myAcc.deposit = 214
+const result3 = myAcc.balance
+const result4 = myAcc.getBalance()
+// console.log(result3, result4);
