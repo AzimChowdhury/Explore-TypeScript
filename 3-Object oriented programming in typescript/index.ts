@@ -199,3 +199,96 @@ class Counter {
 
 
 
+
+
+// polymorphism
+class Person {
+    sleep():void{
+        console.log('I sleep 7 hours a day');
+    }
+}
+
+class Student2 {
+    sleep():void{
+        console.log('I sleep 8 hours a day');
+    }
+}
+
+class Developer {
+    sleep():void{
+        console.log('I sleep 5 hours a day');
+    }
+}
+
+const sleep =(param: Person)=>{
+    param.sleep()
+}
+
+const person1 = new Person()
+const person2 = new Student2()
+const person3 = new Developer()
+
+// sleep(person1)
+// sleep(person2)
+// sleep(person3)
+
+ 
+
+
+
+// abstraction
+
+interface IVehicle {
+    startEngine():void
+    stopEngine():void
+    move():void
+}
+
+class Vehicle implements IVehicle{
+
+    constructor(public name:string, public model: number){}
+
+    startEngine(): void {
+        console.log('i am starting the engine');
+    }
+
+    stopEngine(): void {
+        console.log('I am stopping the engine');
+    }
+
+    move(): void {
+        console.log('move the vehicle');
+    }
+}
+
+const car = new Vehicle ('toyota', 2022)
+// car.move()
+
+
+
+
+ 
+
+abstract class Vehicle2{
+
+    constructor(public name:string, public model: number){}
+
+    abstract startEngine(): void
+
+    abstract stopEngine(): void 
+
+    move(): void {
+        console.log('move the vehicle');
+    }
+}
+
+class newCar extends Vehicle2{
+    startEngine(): void {
+        console.log('start the engine');
+    }
+    stopEngine(): void {
+        console.log('stop the engine');
+    }
+}
+
+ 
